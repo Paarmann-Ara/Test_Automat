@@ -1,0 +1,10 @@
+{
+    "Parent_ToolsBar" : "Aliases.JTL_WAWi.ToolbarPages",
+    "ToolsBar" : "Aliases.JTL_WAWi.ToolbarPages.toolbar",
+
+    "Absturz_btnSchlie_en" : "Aliases.JTL_WAWi.MsgBox_Absturz.btnSchliessen",
+
+    "MsgBox_2" : "Aliases.JTL_WAWi.MsgBox_2",
+    "MsgBox_2_btnOK_0" : "Aliases.JTL_WAWi.MsgBox_2.btnOK_0",
+    "MsgBox_2_btnJa_0" : "Aliases.JTL_WAWi.MsgBox_2.btnJa_0"
+}    

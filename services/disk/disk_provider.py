@@ -1,0 +1,2 @@
+class DiskProvider:
+    pass

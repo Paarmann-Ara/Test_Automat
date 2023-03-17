@@ -1,0 +1,9 @@
+selenium==3.141.0
+Appium-Python-Client==1.0.2
+win32gui
+comtypes==1.1.14
+pyodbc==4.0.35
+pywin32==305
+pywinauto==0.6.8
+PyYAML==6.0
+six==1.16.0

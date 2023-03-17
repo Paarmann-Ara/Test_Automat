@@ -1,0 +1,18 @@
+{
+    "Generalcms_0" : "Aliases.JTL_WAWi.cms_0",
+    "Generalcms_1" : "Aliases.JTL_WAWi.cms_1",
+
+    "PopupMenuBarControl" : "Aliases.JTL_WAWi.Popup.Root.PopupMenuBarControl",
+
+    "ContextMenu_0" : "Aliases.JTL_WAWi.cms_Columns",
+    "ColumnControl_0" : "Aliases.JTL_WAWi.Popup.Root.ColumnsControlMenu.ColumnControl_0",
+                                                                                                  
+    "SpalteneditorAnzeigen" : "Aliases.JTL_WAWi.Popup.Root.PopupMenuBarControl.BarItemLinkInfoWartenAufTermin.BarButtonItemLinkControl.SpalteneditorAnzeigen",
+
+    "Artikel_MainPage_DropdownbuttonArtikel_BarItem_FurVerkaufskanalAktivierenDeaktivieren" : "Aliases.JTL_WAWi.Popup.Root.PopupMenuBarControl.BaritemlinkinfoFRVerkaufskanalAktivierenDe",
+    "Artikel_MainPage_DropdownbuttonDrucken_BarItem_FurArtike" : "Aliases.JTL_WAWi.Popup.Root.PopupMenuBarControl.BarItemLinkInfoPrufungNotwendig.BarButtonItemLinkControl.ContentcontrolexFurArtikel",
+    "Artikel_MainPage_DropdownbuttonDrucken_BarItem_Druckvorschau" : "Aliases.JTL_WAWi.Popup.Root.PopupMenuBarControl.BarItemLinkInfoWartenAufTermin.BarButtonItemLinkControl.ContentcontrolexDruckvorschau",
+    "Artikel_MainPage_DropdownbuttonDrucken_BarItem_NeueProduktseiteErstellenNeueProduktseite" : "Aliases.JTL_WAWi.Popup.Root.PopupMenuBarControl.BarItemLinkInfoPrufungNotwendig.BarbuttonitemlinkcontrolNeueProduktseiteEr",
+    "Artikel_MainPage_DropdownbuttonDrucken_BarItem_EigenesAngebotAufschalten" : "Aliases.JTL_WAWi.Popup.Root.PopupMenuBarControl.BarItemLinkInfoAuftragIstFreigegeben.BarbuttonitemlinkcontrolEigenesAngebotAufs.ContentcontrolexEigenesAngebotAufschalten",
+    "Artikel_MainPage_DropdownbuttonArtikel_BarItem_AngebotsvorlageErstellen" : "Aliases.JTL_WAWi.Popup.Root.PopupMenuBarControl.BarItemLinkInfoAuftragIstFreigegeben.BarButtonItemLinkControl.AngebotsvorlageErstellen"
+}

@@ -1,0 +1,17 @@
+{
+    "Form" : "Aliases.JTL_WAWi.ListViewEditor",
+    "btnSpeichern" : "Aliases.JTL_WAWi.ListViewEditor.ListViewEditorViewModel.btnSpeichern",
+    "btnAbbrechen" : "Aliases.JTL_WAWi.ListViewEditor.ListViewEditorViewModel.btnAbbrechen",
+
+    "btnMoveAllToInvisibleColumns" : "Aliases.JTL_WAWi.ListViewEditor.ListViewEditorViewModel.btnMoveAllToInvisibleColumns",
+    "btnMoveAllToVisibleColumns" : "Aliases.JTL_WAWi.ListViewEditor.ListViewEditorViewModel.btnMoveAllToVisibleColumns",
+
+    "ColumnDialog" : "Aliases.JTL_WAWi.ColumnDialog",
+    "ColumnDialog_Header" : "Aliases.JTL_WAWi.ColumnDialog.tlpMain.lv.tlpMain.lv.HeaderControl",
+    "ColumnDialog_btnOk" : "Aliases.JTL_WAWi.ColumnDialog.tlpMain.tlpButtons.btnOk",
+
+    "JTL_Column_Dialog" : "Aliases.JTL_WAWi.jtlListViewExHeaderEdit",
+    "lvJTLHeadersAvailable" : "Aliases.JTL_WAWi.jtlListViewExHeaderEdit.tableLayoutPanel1.groupBox2.lvHeadersAvailable",
+    "btnJTL_Column_MoveAllToVisibleColumns" : "Aliases.JTL_WAWi.jtlListViewExHeaderEdit.tableLayoutPanel1.panel1.btnAktivate",
+    "btnJTL_Column_Speichern" : "Aliases.JTL_WAWi.jtlListViewExHeaderEdit.pnlFooter.btnSave"
+}
