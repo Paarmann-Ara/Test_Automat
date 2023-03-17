@@ -1,4 +1,4 @@
-from disk.base_disk import BaseDisk
+from services.disk.base_disk import BaseDisk
 
 # --
 # ...

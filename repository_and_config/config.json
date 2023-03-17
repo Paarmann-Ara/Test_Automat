@@ -3,7 +3,7 @@
         "test_case_objects_dictionary": "C:\\OneDrive\\TestCaseExec\\wawi\\test_case\\test_case_object_dictionary"
     },
 
-    "db_config":{
+    "services.db":{
         "Drive": "SQL Serve",
         "Host": "LocalHost/JTLWAWI",
         "Database": "maste",
@@ -11,7 +11,7 @@
         "Password" : "sa04jT14"
     },
 
-    "mail_config" : {
+    "services.mail" : {
         "JTL_MailServe": "mail.jtl-software.de",
         "JTL_MailServer_SMTP": "mail.jtl-software.de: 587",
 
@@ -35,14 +35,14 @@
         "Default_Dev_Address": "mohammad.ghorbani-charami@jtl-software.com"
     },
 
-    "loger": 
+    "services.log_.config.log_config": 
     {
-        "stack":{
+        "services.log_.stack.stack_context":{
             "no_show_moduls" : ["TestUmgebung", "le_Datei", "mTestTools"],
             "no_show_methods" : ["StackOperation", "WaitForAvailablity", "__RunTest"]
         },
 
-        "loging":{
+        "services.log_.loging.log":{
             "Pipeline":{
                 "NumberOfLogInBatch": "1",
                 "Directory" : "C:\\OneDrive\\TC_Sample_Datei",
@@ -63,5 +63,6 @@
         }
     },
 
-    "drivers_config":{}
+    "drivers":{}
+
 }

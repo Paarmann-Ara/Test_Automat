@@ -1,5 +1,5 @@
-from disk.json.json_manager import JSONManager
-from disk.xml.xml_manager import XMLManager
+from services.disk.json.json_manager import JSONManager
+from services.disk.xml.xml_manager import XMLManager
 from toolboxs.toolbox import Toolbox
 import pprint
 

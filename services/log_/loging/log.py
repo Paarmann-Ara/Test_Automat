@@ -1,8 +1,7 @@
 from typing import Any
-from disk.file.file_manager import FileManager
-from loger.config.log_config import LogConfig
-from loger.base_log import BaseLog
-from loger.templates.log_template_dictionary import LogTemplateDictionary
+from services.log_.config.log_config import LogConfig
+from services.log_.base_log import BaseLog
+from services.log_.templates.log_template_dictionary import LogTemplateDictionary
 
 #--
 #...
@@ -13,20 +12,26 @@ class Log(BaseLog):
     def __init__(self, **kwarg) -> None:
         
         try:
-            
+                      
             #aliance for short writing
-            self.Info = self.set_information_for_log_file
-            self.Error = self.set_information_for_log_file
-            self.Write = self.write_in_log_file
+            self.Info = self.Error = self.set_information_for_log_file
             
             #create instance for file operation
-            self.file_manager = FileManager().instance
+            self.file_manager = kwarg['file_manager_class']
             self.info_message = ['\n']
 
-            #set log config        
-            self.log_file = self.config_dictionary['Directory'] + self.config_dictionary['FileName']
-            self.number_of_log_in_batch = int(self.config_dictionary['NumberOfLogInBatch'])
-            self.is_show_in_consoule = bool(self.config_dictionary['ShowInConsoule'])
+
+            #set template and config
+            if 'template' in kwarg:
+                self.instance.log_template = self.instance.template_dictionary[kwarg['template']]
+            else: 
+                self.instance.log_template = ''
+            
+            if 'config' in kwarg:
+                self.instance.config_dictionary = self.instance.config_dictionary[__name__][kwarg['config']]
+                self.log_file = self.config_dictionary['Directory'] + self.config_dictionary['FileName']
+                self.number_of_log_in_batch = int(self.config_dictionary['NumberOfLogInBatch'])
+                self.is_show_in_consoule = bool(self.config_dictionary['ShowInConsoule'])
             
         except Exception as exp:
             print(__name__ + str(exp))
@@ -51,17 +56,17 @@ class Log(BaseLog):
 #...
 #--
     
-    def set_information_for_log_file(self, message):
+    def set_information_for_log_file(self, message, is_force_write = False):
 
         try:
             
             #print message on screen
             if self.is_show_in_consoule:
-                temp = f"import datetime\nprint({self.template_dictionary})"
+                temp = f"import datetime\nprint({self.log_template})"
                 exec(temp, {'message': message})
 
             #compile message and template
-            temp = f"""import datetime;temp ={self.template_dictionary}; f = open("temp.txt", "w"); f.write(str(temp[0] + temp[1]))"""
+            temp = f"""import datetime;temp ={self.log_template}; f = open("temp.txt", "w"); f.write(str(temp[0] + temp[1]))"""
             exec(temp, {'message': message})
             
             #prepaire message
@@ -69,7 +74,7 @@ class Log(BaseLog):
             
             #send message to write in file
             self.info_message.append(message)
-            if len(self.info_message) > self.number_of_log_in_batch:
+            if len(self.info_message) > self.number_of_log_in_batch or is_force_write:
                 self.write_in_log_file()
                 
         except Exception as exp:

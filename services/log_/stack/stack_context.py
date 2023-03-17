@@ -1,6 +1,7 @@
 import re
 import traceback
-from loger.base_log import BaseLog
+from services.log_.base_log import BaseLog
+from services.log_.config.log_config import LogConfig
 from typing import Any
 
 # --
@@ -12,9 +13,16 @@ class StackContext(BaseLog):
     def __init__(self, object_name) -> None:
         self.object_name = object_name
         
-        self.no_show_moduls = self.log_config["no_show_moduls"]
-        self.no_show_methods = self.log_config["no_show_methods"]
+        self.no_show_moduls = self.config_dictionary[__name__]["no_show_moduls"]
+        self.no_show_methods = self.config_dictionary[__name__]["no_show_methods"]
+#--
+#...
+#--
 
+    @classmethod
+    def get_config_dictionary(cls):
+            return LogConfig().instance.dictionary
+        
 # --
 # ...
 # --
@@ -59,7 +67,3 @@ class StackContext(BaseLog):
 
         except Exception as exp:
             print(__file__ + ': ' + str(exp))
-            
-            
-            
-print(StackContext().StackOperation())

@@ -1,4 +1,4 @@
-from loger.loging.log import Log
+from services.log_.stack.stack_context import StackContext
 
 # --
 # ...
@@ -6,5 +6,5 @@ from loger.loging.log import Log
 
 
 class StackContextProvider:
-    def __init__(self) -> None:
-        pass
+    def __init__(self, object_name='') -> None:
+        self.stack = StackContext(object_name=object_name).StackOperation

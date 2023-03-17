@@ -1,5 +1,5 @@
-from base.base_repository import BaseRepository
-from disk.json.json_manager import JSONManager
+from repository_and_config.base_dictionary import BaseRepository
+from services.disk.json.json_manager import JSONManager
 import CONSTS
 
 # --
