@@ -1,7 +1,30 @@
-from mail.templates.testcomplete_result import TestCompleteResultTemplate
-from mail.send_mail import SendMail
-from mail.config.mail_config import EmailConfig
-from wawi.config.test_case.test_case_config import TestCaseConfig
+from services.mail.templates.testcomplete_result import TestCompleteResultTemplate
+from services.mail.config.mail_config import EmailConfig
+from services.mail.mail import Mail
+#from mail.send_mail import SendMail
+#from wawi.config.test_case.test_case_config import TestCaseConfig
+
+
+
+
+
+
+
+s = Mail()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 html_body = TestCompleteResultTemplate(body='BODY Ke Sakhtam')()
 

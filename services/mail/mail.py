@@ -1,4 +1,4 @@
-from loger import log_me
+from services.mail.base_mail import BaseMail
 from email.mime.multipart import MIMEMultipart
 from email import encoders
 from email.mime.text import MIMEText
@@ -12,13 +12,46 @@ from typing import Any
 # --
 
 
-class Mail():
-    pass
-
-    @staticmethod
-    def send_mail(html_body={'html':'', 'body':''}, from_addr='', to_addr='', cc_addr_list='', subject='', login='', password='', smtpserver='', attach ={'attach_item' : {'is_attach' : True, 'is_all_directory' : False, 'directory' : '', 'file' :''}}) -> bool:
+class Mail(BaseMail):
+    def __init__(self, **kwarg) -> None:      
         
-        log_me.INFO(__name__)
+        try:
+                                  
+            #aliance for short writing
+            self.Send = self.send_mail
+            
+            #create instance for file operation
+            self.Info = kwarg['log_info_class']
+            self.Error = kwarg['log_error_class']
+
+            #set template and config
+            if 'template' in kwarg:
+                self.instance.log_template = self.instance.template_dictionary[kwarg['template']]
+            else: 
+                self.instance.log_template = ''
+            
+            if 'config' in kwarg:
+                self.instance.config_dictionary = self.instance.config_dictionary[__name__][kwarg['config']]
+                self.html_body=self.config_dictionary['html_body']
+                self.from_addr=self.config_dictionary['from_addr'],
+                self.to_addr=self.config_dictionary['to_addr'],
+                self.cc_addr_list=self.config_dictionary['cc_addr_list'],
+                self.subject=self.config_dictionary['subject'],
+                self.login=self.config_dictionary['login'],
+                self.password=self.config_dictionary['password'],
+                self.smtpserver=self.config_dictionary['smtpserver']
+            
+        except Exception as exp:
+            print(__name__ + str(exp))
+
+# --
+# ...
+# --
+
+    def send_mail(self, attach ={'attach_item' : {'is_attach' : True, 'is_all_directory' : False, 'directory' : '', 'file' :''}}) -> bool:
+        
+        
+        #INFO(__name__)
         
         try:
 
@@ -50,17 +83,16 @@ class Mail():
             return True
 
         except Exception as exp:
-            log_me.ERROR(__name__ + str(exp))
+            #log_me.ERROR(__name__ + str(exp))
             return False
 
 # --
 # ...
 # --
 
-    @staticmethod
     def attach(attach ={'attach_item' : {'is_attach' : True, 'is_all_directory' : False, 'directory' : '', 'file' :''}}) -> Any:
         
-        log_me.INFO(__name__)
+        #log_me.INFO(__name__)
         
         try:
             
@@ -86,16 +118,16 @@ class Mail():
             return attachments
                     
         except Exception as exp:
-            log_me.ERROR(__name__ + str(exp))
+            pass
+            #log_me.ERROR(__name__ + str(exp))
             
 # --
 # ...
 # --
 
-    @staticmethod
     def create_holder(files):
         
-        log_me.INFO(__name__)
+        #log_me.INFO(__name__)
         
         try:
             
@@ -120,4 +152,5 @@ class Mail():
             return temp_attachments
         
         except Exception as exp:
-            log_me.ERROR(__name__ + str(exp))
+            pass
+            #log_me.ERROR(__name__ + str(exp))

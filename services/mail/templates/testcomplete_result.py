@@ -1,11 +1,11 @@
-from mail.base_email_template import BaseEmailTemplate
+from services.mail.base_mail_template import BaseMailTemplate
 
 
 # --
 # ...
 # --
 
-class TestCompleteResultTemplate(BaseEmailTemplate):
+class TestCompleteResultTemplate(BaseMailTemplate):
         
     @classmethod
     def get_template(cls, body: str)-> str:

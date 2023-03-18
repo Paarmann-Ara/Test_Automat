@@ -10,11 +10,14 @@ from typing import Any
 
 
 class StackContext(BaseLog):
-    def __init__(self, object_name) -> None:
-        self.object_name = object_name
+    object_name = None
+    no_show_moduls = None
+    no_show_methods = None
+    
+    def __init__(self) -> None:
+        StackContext.no_show_moduls = self.config_dictionary[__name__]["no_show_moduls"]
+        StackContext.no_show_methods = self.config_dictionary[__name__]["no_show_methods"]
         
-        self.no_show_moduls = self.config_dictionary[__name__]["no_show_moduls"]
-        self.no_show_methods = self.config_dictionary[__name__]["no_show_methods"]
 #--
 #...
 #--
@@ -27,21 +30,23 @@ class StackContext(BaseLog):
 # ...
 # --
   
-    def __str__(self) -> str:
-        return self.StackOperation()
+    def __str__(cls) -> str:
+        return cls.StackOperation()
         
 # --
 # ...
 # --
-    
-    def StackOperation(self)-> Any:
+    @classmethod
+    def StackOperation(cls, object_name='')-> Any:
 
         try:
+            
+            cls.object_name = object_name
 
             Stack:Any = ''
 
-            if self.object_name != '':
-                Stack = re.search(r"([(]).+([)])", self.object_name)
+            if cls.object_name != '':
+                Stack = re.search(r"([(]).+([)])", cls.object_name)
 
             else:
                 for line in traceback.format_stack()[3:]:
@@ -52,14 +57,14 @@ class StackContext(BaseLog):
                         Module = Data.group(1)[3:]
                         Line = Data.group(2)[1:]
 
-                        if Module not in self.no_show_moduls:
+                        if Module not in cls.no_show_moduls:
                             Data = re.search(r"(\b, in\b.\w+)", line)
                             Method = '0'
 
                             if Data:
                                 Method = Data.group()[5:]
 
-                                if Method not in self.no_show_methods:
+                                if Method not in cls.no_show_methods:
                                     Stack = Stack + ' > ' + Module + \
                                         '.' + Method + '(' + Line + ')'
 

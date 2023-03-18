@@ -11,28 +11,44 @@
         "Password" : "sa04jT14"
     },
 
-    "services.mail" : {
-        "JTL_MailServe": "mail.jtl-software.de",
-        "JTL_MailServer_SMTP": "mail.jtl-software.de: 587",
+    "services.mail.config" : {
+        "mailserver":{
+            "jtl-software.de":{
+                "domain": "mail.jtl-software.de",
+                "smtp": "mail.jtl-software.de: 587",
+                "aacounts":{
+                    "tc":{
+                        "address": "tc@jtl-software.de",
+                        "password": "Gk%30lh7uZy!h919"
+                    },
+            
+                    "tc_help":{
+                        "address": "tc-help@jtl-software.de",
+                        "password": "6Cwee$64xapH6!50"
+                    },
+            
+                    "noreplay":{
+                        "address": "noreply@jtl-software.com",
+                        "password": "3MiFMdEHFETUzRw"
+                    },
+            
+                    "tc_bugalert":{
+                        "address": "tc-bugalert@jtl-software.de",
+                        "password": "sGi609!nCal0x$31"
+                    },
+            
+                    "tc_konfig":{
+                        "address": "tc-konfig@jtl-software.de",
+                        "password": "fZt0z4"
+                    }
+                }
+            }
+        },
 
-        "TC_Address": "tc@jtl-software.de",
-        "TC_Password": "Gk%30lh7uZy!h919",
 
-        "TC_Help_Address": "tc-help@jtl-software.de",
-        "TC_Help_Password": "6Cwee$64xapH6!50",
-
-        "NoReplay_Address": "noreply@jtl-software.com",
-        "NoReplay_Password": "3MiFMdEHFETUzRw",
-        
-        "TC_BugAlert_Address": "tc-bugalert@jtl-software.de",
-        "TC_BugAlert_Password": "sGi609!nCal0x$31",
-
-        "TC_konfig_Address": "tc-konfig@jtl-software.de",
-        "TC_konfig_Password": "fZt0z4",
-
-        "Default_Sender_Address": "mohammad.ghorbani-charami@jtl-software.com",
-        "Default_Admin_Address": "mohammad.ghorbani-charami@jtl-software.com",
-        "Default_Dev_Address": "mohammad.ghorbani-charami@jtl-software.com"
+        "default_sender_address": ["mohammad.ghorbani-charami@jtl-software.com"],
+        "default_admin_address": ["mohammad.ghorbani-charami@jtl-software.com"],
+        "default_dev_address": ["mohammad.ghorbani-charami@jtl-software.com"]
     },
 
     "services.log_.config.log_config": 

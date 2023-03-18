@@ -12,14 +12,14 @@ class Log(BaseLog):
     def __init__(self, **kwarg) -> None:
         
         try:
-                      
+            
+            self.info_message = ['\n']
+                                  
             #aliance for short writing
             self.Info = self.Error = self.set_information_for_log_file
             
             #create instance for file operation
             self.file_manager = kwarg['file_manager_class']
-            self.info_message = ['\n']
-
 
             #set template and config
             if 'template' in kwarg:
