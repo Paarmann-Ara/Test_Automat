@@ -1,4 +1,4 @@
-from services.mail.base_mail_template import BaseMailTemplate
+from services.mail.core.base_mail_template import BaseMailTemplate
 
 
 # --
@@ -7,8 +7,12 @@ from services.mail.base_mail_template import BaseMailTemplate
 
 class TestCompleteResultTemplate(BaseMailTemplate):
         
+# --
+# ...
+# --
+
     @classmethod
-    def get_template(cls, body: str)-> str:
+    def get_template(cls)-> str:
             
         html = """
                 <html>
@@ -24,10 +28,21 @@ class TestCompleteResultTemplate(BaseMailTemplate):
                       
                     <body>
                         <div class="content">
-                        """ + f"{body}" + """
+                        {}
                         </div>
                     </body>
                 </html>
             """
+                
+        return html
+
+# --
+# ...
+# --
+
+    @classmethod
+    def get_mixed_html_body(cls, body: str)-> str:
+            
+        html = cls.get_template().replace('{}', body)
                 
         return html

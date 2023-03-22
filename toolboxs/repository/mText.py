@@ -1,4 +1,4 @@
-﻿from Toolboxs.Repository.Base.mBaseRepository import BaseRepository
+﻿from Toolboxs.Repository.Base.mBaseDictionary import BaseDictionary
 from Toolboxs.Repository.mTextDictionary import cTextDictionary
 
 
@@ -6,7 +6,7 @@ from Toolboxs.Repository.mTextDictionary import cTextDictionary
 # ...
 # --
 
-class cText(BaseRepository):
+class cText(BaseDictionary):
         @classmethod
         def get_dictionary(cls):
                 return cTextDictionary()()

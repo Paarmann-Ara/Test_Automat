@@ -1,0 +1,70 @@
+{
+    "Simple_CSV_AnhangDatei" : "C:/OneDrive/TC_Sample_Datei/ZLAB.csv",
+    "Zahlungsanbieter_CSV" : "C:/OneDrive/TC_Sample_Datei/ZLAB.csv",
+
+    "Postleitzahlen_FileAddress" : "C:/OneDrive/TC_Sample_Datei/PLZ.csv",
+    "Postleitzahlen_CSV" : "C:/OneDrive/TC_Sample_Datei/ZLAB.csv",
+
+    "Firma_Signatur_Portal_Pfad" : "C:/OneDrive/TC_Sample_Datei/ZLAB.csv",
+    "Firma_Signatur_Extern_Dateiname" : "C:/OneDrive/TC_Sample_Datei/ZLAB.csv",
+
+    "ArtikelFilter_ImportDateiname" : "C:/OneDrive/TC_Sample_Datei/ZLAB.csv",
+    "Zahlungsabgleich_Datei" : "C:/OneDrive/TC_Sample_Datei/Zahlungsabgleich.csv",
+
+    "Zahlungsanbiter_FinContact_Datei" : "C:/OneDrive/TC_Sample_Datei/Zahlungsabgleich.csv",
+    "Zahlungsanbiter_EBICS_Datei" : "C:/OneDrive/TC_Sample_Datei/Zahlungsabgleich.csv",
+    "Zahlungsanbiter_AmazonPayAccount_Datei" : "C:/OneDrive/TC_Sample_Datei/Zahlungsabgleich.csv",
+    "Zahlungsanbiter_CSV_Datei" : "C:/OneDrive/TC_Sample_Datei/PLZ.csv",
+    "Zahlungsanbiter_XML_Datei" : "C:/OneDrive/TC_Sample_Datei/Zahlungsabgleich.csv",
+
+    "Statistik_VorlageImport" : "C:/OneDrive/TC_Sample_Datei/1.mgv",
+    "Statistik_VorlageExport" : "C:/OneDrive/TC_Sample_Datei/2.mgv",
+
+    "GlobaleEinstellungen_Debug" : "C:/OneDrive/TC_Sample_Datei/1.txt",
+    "Mindesthaltbarkeitsdatum_CSV" : "C:/OneDrive/TC_Sample_Datei/vs.csv",
+             	
+    "Kategorie_BildToReplace" : "C:/OneDrive/TC_Sample_Datei/5.jpg",
+    "Kategorie_BildToExport" : "C:/OneDrive/TC_Sample_Datei/6.jpg",
+    "Kategorie_Bild0" : "C:/OneDrive/TC_Sample_Datei/3.jpg",
+    "Kategorie_Bild1" : "C:/OneDrive/TC_Sample_Datei/4.png",
+
+    "Konfigurationsgruppen_Bild" : "C:/OneDrive/TC_Sample_Datei/3.jpg",
+    					
+    "eBayDesignvorlagen_Picture0" : "C:/OneDrive/TC_Sample_Datei/1.gif",
+    "eBayDesignvorlagen_Picture1" : "C:/OneDrive/TC_Sample_Datei/5.jpg",
+
+    "Artikel_WertBild" : "C:/OneDrive/TC_Sample_Datei/5.jpg",
+    "Artikel_Bild5" : "C:/OneDrive/TC_Sample_Datei/5.jpg",
+    "Artikel_Bild1" : "C:/OneDrive/TC_Sample_Datei/7.png",
+    "Artikel_Bild2" : "C:/OneDrive/TC_Sample_Datei/3.jpg",
+    "Artikel_Bild3" : "C:/OneDrive/TC_Sample_Datei/4.jpg",
+
+    "Abonnement_AnhangDatei" : "C:/OneDrive/TC_Sample_Datei/5.jpg",
+    "Angebot_AnhangDatei" : "C:/OneDrive/TC_Sample_Datei/5.jpg",
+    "Rechnungskorrekturen_AnhangDatei" : "C:/OneDrive/TC_Sample_Datei/5.jpg",
+    "Auftrag_AnhangDatei" : "C:/OneDrive/TC_Sample_Datei/5.jpg",
+    "ArtikelFilter_ExportDateiname" : "C:/OneDrive/TC_Sample_Datei/ArtikelFilter.csv",
+
+    "DruckEMailExportvorlagen_AddDatei1" : "C:/OneDrive/TC_Sample_Datei/1.pdf",
+    "DruckEMailExportvorlagen_AddDatei" : "C:/OneDrive/TC_Sample_Datei/1.csv",
+    "DruckEMailExportvorlagen_ExportDateiCSV" : "C:/OneDrive/TC_Sample_Datei/1.csv",
+    "DruckEMailExportVorlagen_ExportDatei" : "C:/OneDrive/TC_Sample_Datei/1.vlg",
+    "DruckEMailExportVorlagen_ImportDatei" : "C:/OneDrive/TC_Sample_Datei/1.vlg",
+
+    "Merkmal_Datei" : "C:/OneDrive/TC_Sample_Datei/4.jpg",
+    "Herstellen_Datei" : "C:/OneDrive/TC_Sample_Datei/4.jpg",
+    "File_Datei" : "C:/OneDrive/TC_Sample_Datei/4.jpg",
+    "Angebotsimport_ZuordnungPerCSV" : "C:/OneDrive/TC_Sample_Datei/ebay_zuordnung.csv",
+
+    "Versandlistendruck_ExportDatei" : "C:/OneDrive/TC_Sample_Datei/VSVL.CSV",
+    "VersanddatenExport_ExportDatei" : "C:/OneDrive/TC_Sample_Datei/VSVL.CSV",
+    "VersanddatenImport_Datei" : "C:/OneDrive/TC_Sample_Datei/VSVL.CSV",
+
+    "LieferantNachricht_Datei" : "C:/OneDrive/TC_Sample_Datei/VSVL.CSV",
+
+    "VersanddatenImportieren_Dateiname" : "C:/OneDrive/TC_Sample_Datei/VSVL.CSV",
+
+    "DHL_Leitcodierungsdatei" : "C:/OneDrive/TC_Sample_Datei/dhl_leitcode.dat",
+
+    "xmlAuftrageDatei" : "C:/OneDrive/TC_Sample_Datei/2.xml"
+}

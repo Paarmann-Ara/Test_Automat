@@ -1,0 +1,9 @@
+{
+        "db_dictionary":{
+            "Driver": "SQL Server",
+            "Host": "LocalHost/JTLWAWI",
+            "Database": "master",
+            "UserName": "sa",
+            "Password" : "sa04jT14"
+        }
+    }

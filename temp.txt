@@ -1,1 +1,1 @@
-03-18-2023, 18:34:29  > pter.main(430) > pter.run_file(284)
+03-22-2023, 15:05:07 c:\OneDrive\Test_Automat\services\db\sqlserver\core\sql_server_connection.py-services.db.sqlserver.core.sql_server_connection: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server existiert nicht oder Zugriff verweigert. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (67)')

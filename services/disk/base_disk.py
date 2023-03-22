@@ -18,7 +18,7 @@ class BaseDisk(ABC):
     def __new__(cls, *args, **kwarg: Any):
         if not hasattr(cls, 'instance') or not cls.instance:
             cls.instance = super().__new__(cls)
-                   
+
         return cls.instance
     
 # --

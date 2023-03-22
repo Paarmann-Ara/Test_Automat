@@ -1,0 +1,25 @@
+from services.db.sqlserver_provider import SqlserverProvider
+
+
+
+
+sqlserver_connection = SqlserverProvider().sqlserver_connection
+
+# db_config_dictionary = DBConfig().instance
+
+# connection = SQLConnection(driver=db_config_dictionary('Driver'), host=db_config_dictionary('Host'), database=db_config_dictionary('Database'), user_name=db_config_dictionary('UserName'), password=db_config_dictionary('Password'), is_use_default=False).instance
+# result = SQLExecute(connection, db_command = 'DB_TestMeRestore').execute_dbcommand()
+
+# # --
+# # ...
+# # --
+
+# connection = SQLConnection(is_use_default = True).instance
+# result = SQLExecute(connection, db_command = 'DB_TestMeRestore').execute_dbcommand()
+
+# # --
+# # ...
+# # --
+
+# connection = SQLConnection(is_use_default = True).instance
+# result = SQLExecute(connection, command = 'USE eazybusiness;SET NOCOUNT ON; SELECT * FROM dbo.tRMGrund').execute_command()

@@ -1,4 +1,4 @@
-from Toolboxs.Repository.Base.mBaseRepository import BaseRepository
+from Toolboxs.Repository.Base.mBaseDictionary import BaseDictionary
 from Toolboxs.Repository.mTimeDictionary import cTimeDictionary
 
 
@@ -6,7 +6,7 @@ from Toolboxs.Repository.mTimeDictionary import cTimeDictionary
 # ...
 # --
 
-class cTime(BaseRepository):
+class cTime(BaseDictionary):
         @classmethod
         def get_dictionary(cls):
                 return cTimeDictionary()()

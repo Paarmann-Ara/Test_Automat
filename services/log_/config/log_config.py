@@ -1,4 +1,4 @@
-from repository_and_config.base_repository import BaseRepository
+from config_dictionary.base_dictionary import BaseDictionary
 from services.disk.json.json_manager import JSONManager
 import CONSTS
 
@@ -7,7 +7,7 @@ import CONSTS
 # ...
 # --
 
-class LogConfig(BaseRepository):
+class LogConfig(BaseDictionary):
     @classmethod
     def get_dictionary(cls, *args) -> dict:
         json = JSONManager().instance

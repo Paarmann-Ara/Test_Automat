@@ -1,0 +1,5 @@
+from wawi.testcase.testcase_object_provider import TestcaseObjectProvider
+from wawi.testcase.testcase_sample_provider import TestcaseSampelProvider
+
+objects_context_menu = TestcaseObjectProvider('objects_context_menu').object_class
+Simple_CSV_AnhangDatei = TestcaseSampelProvider('Simple_CSV_AnhangDatei').full_adress

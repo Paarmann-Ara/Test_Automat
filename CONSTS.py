@@ -2,5 +2,5 @@ from toolboxs.toolbox import Toolbox
 
 ROOT_DIR = Toolbox.get_root_path()
 
-CONFIG_JSON = ROOT_DIR + r'\repository_and_config\config.json'
-TEST_CASE_DIR = ROOT_DIR + r'\wawi\test_case'
+CONFIG_JSON = ROOT_DIR + '/config_dictionary/config.json'
+TESTCASE_DIR = ROOT_DIR + '/wawi/testcase/testcase_object'

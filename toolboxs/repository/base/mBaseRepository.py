@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 # ...
 # --
 
-class BaseDictionary(dict):
+class DefaultDictionary(dict):
     def __missing__(self, key):
         return 'nothing'
 
@@ -14,7 +14,7 @@ class BaseDictionary(dict):
 # ...
 # --
     
-class BaseRepository(ABC):
+class BaseDictionary(ABC):
     def __init__(self) -> None:
         pass
     
@@ -29,7 +29,7 @@ class BaseRepository(ABC):
             
             cls.instance.dictionary = cls.get_dictionary()
             
-        cls.instance.dictionary = BaseDictionary(
+        cls.instance.dictionary = DefaultDictionary(
             cls.instance.dictionary)
         
         return cls.instance
