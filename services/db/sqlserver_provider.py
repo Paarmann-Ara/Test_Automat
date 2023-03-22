@@ -7,3 +7,4 @@ class SqlserverProvider:
         self.log_error_class = LogProvider().error_instance
         
         self.sqlserver_connection = SqlserverConnection(log_info_class=self.log_info_class, log_error_class=self.log_error_class).instance
+        result = SQLExecute(connection, db_command = 'DB_TestMeRestore').execute_dbcommand()

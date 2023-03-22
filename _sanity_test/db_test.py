@@ -1,8 +1,5 @@
 from services.db.sqlserver_provider import SqlserverProvider
 
-
-
-
 sqlserver_connection = SqlserverProvider().sqlserver_connection
 
 # db_config_dictionary = DBConfig().instance
