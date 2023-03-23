@@ -11,5 +11,5 @@ class LogProvider:
         
         self.file_manager_class = FileManager().instance
         
-        self.info_instance = Log(template=template, config=config, file_manager_class=self.file_manager_class).instance.info
-        self.error_instance = Log(template='Error', config='Error', file_manager_class=self.file_manager_class).instance.error
+        self.info = Log(template=template, config=config, file_manager_class=self.file_manager_class).instance.info
+        self.error = Log(template='Error', config='Error', file_manager_class=self.file_manager_class).instance.error

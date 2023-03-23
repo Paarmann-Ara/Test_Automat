@@ -9,11 +9,11 @@ import CONSTS
 class TestcaseObjectDictionary(BaseDictionary):
 
     @classmethod
-    def get_dictionary(cls, **kwarg) -> dict:
+    def get_dictionary(cls, **kwargs) -> dict:
         json = JSONManager().instance
         
-        if 'dictionary_fulladress' in kwarg:
-            return json.operation(f'{CONSTS.ROOT_DIR}//{kwarg["dictionary_fulladress"]}')
+        if 'dictionary_fulladress' in kwargs:
+            return json.operation(f'{CONSTS.ROOT_DIR}//{kwargs["dictionary_fulladress"]}')
             
         else:        
             return json.operation(CONSTS.CONFIG_JSON)[__name__]

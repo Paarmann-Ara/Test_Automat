@@ -15,7 +15,7 @@ from typing import Any
 
 
 class Mail(BaseMail):
-    def __init__(self, **kwarg) -> None:      
+    def __init__(self, **kwargs) -> None:      
         
         try:
             
@@ -23,26 +23,26 @@ class Mail(BaseMail):
             self.cc_addr_list = []
 
             #set template
-            if 'template' in kwarg:
-                self.mail_template_class = self.instance.template_dictionary[kwarg['template']]
+            if 'template' in kwargs:
+                self.mail_template_class = self.instance.template_dictionary[kwargs['template']]
                 self.template_object = self.mail_template_class(body='').template_object
 
-                if 'template_body' in kwarg:
-                    self.template_object = self.mail_template_class(body=kwarg['body']).template_object
+                if 'template_body' in kwargs:
+                    self.template_object = self.mail_template_class(body=kwargs['body']).template_object
                     
-            self.subject = kwarg['subject']
+            self.subject = kwargs['subject']
 
             #set domain
-            if 'domain' in kwarg:
-                self.domain_dictionary = self.instance.config_dictionary[kwarg['domain']]
+            if 'domain' in kwargs:
+                self.domain_dictionary = self.instance.config_dictionary[kwargs['domain']]
                 self.smtpserver=self.domain_dictionary['smtp']
                 
                 #create and set from adresss dictionary
-                self.from_addr=self.domain_dictionary[kwarg['sender']]['address']
-                self.password=self.domain_dictionary[kwarg['sender']]['password']
+                self.from_addr=self.domain_dictionary[kwargs['sender']]['address']
+                self.password=self.domain_dictionary[kwargs['sender']]['password']
                 
                 #create and set to, cc adresss dictionary
-                recipient_dictionary = kwarg['recipient']
+                recipient_dictionary = kwargs['recipient']
                  
                 for item in recipient_dictionary['recipient_address']:
                     self.to_addr_list.append(self.domain_dictionary[item])
@@ -52,11 +52,11 @@ class Mail(BaseMail):
 
             #attchment
             #   attach_object = {'attach_item' : {'is_attach' : True, 'is_all_directory' : False, 'directory' : '', 'file' :''}}
-            if 'attach_object' in kwarg:
-                self.attach_object = kwarg['attach_object']
+            if 'attach_object' in kwargs:
+                self.attach_object = kwargs['attach_object']
                  
         except Exception as exp:
-           self.error(f"{__file__}-{__name__}: {str(exp)}")
+           self.error(f"{__file__}--->{__name__}: {str(exp)}")
             
 #--
 #...
@@ -78,23 +78,23 @@ class Mail(BaseMail):
 # ...
 # --
     
-    def send_mail(self, **kwarg) -> bool:
+    def send_mail(self, **kwargs) -> bool:
         
         try:
 
             # high periority is for parameter that sent to send_mail then attributs of mail instance
-            if 'template_object' in kwarg:
-                template_object = kwarg['template_object']
+            if 'template_object' in kwargs:
+                template_object = kwargs['template_object']
             else:
                 template_object = self.template_object
                 
-            if 'subject' in kwarg:
-                subject = kwarg['subject']
+            if 'subject' in kwargs:
+                subject = kwargs['subject']
             else:
                 subject = self.subject
                 
-            if 'attach_object' in kwarg:
-                attach_object = kwarg['attach_object']
+            if 'attach_object' in kwargs:
+                attach_object = kwargs['attach_object']
             else:
                 attach_object = self.attach_object
                 
@@ -126,7 +126,7 @@ class Mail(BaseMail):
             return True
 
         except Exception as exp:
-            self.error(f"{__file__}-{__name__}: {str(exp)}")
+            self.error(f"{__file__}--->{__name__}: {str(exp)}")
             return False
 
 # --
@@ -161,7 +161,7 @@ class Mail(BaseMail):
             return attachments
                     
         except Exception as exp:
-            self.error(f"{__file__}-{__name__}: {str(exp)}")
+            self.error(f"{__file__}--->{__name__}: {str(exp)}")
             
 # --
 # ...
@@ -193,5 +193,5 @@ class Mail(BaseMail):
             return temp_attachments
         
         except Exception as exp:
-            self.error(f"{__file__}-{__name__}: {str(exp)}")
+            self.error(f"{__file__}--->{__name__}: {str(exp)}")
 

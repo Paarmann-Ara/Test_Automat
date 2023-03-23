@@ -8,7 +8,7 @@ from config_dictionary.defualt_dictionary import DefaultDictionary
 
     
 class BaseDictionary(ABC):
-    def __init__(self, *args, **kwarg: Any) -> None:
+    def __init__(self, *args, **kwargs: Any) -> None:
         self.dictionary: dict
     
 # --
@@ -16,19 +16,19 @@ class BaseDictionary(ABC):
 # --
    
     instance: Any = None
-    def __new__(cls,*args:Any, **kwarg: Any):
+    def __new__(cls,*args:Any, **kwargs: Any):
         
-        if hasattr(cls, 'instance_args') or hasattr(cls, 'instance_kwarg'):
-            if cls.instance_kwarg != kwarg or cls.instance_args != args :
+        if hasattr(cls, 'instance_args') or hasattr(cls, 'instance_kwargs'):
+            if cls.instance_kwargs != kwargs or cls.instance_args != args :
                 cls.instance = None
                 
         if not hasattr(cls, 'instance') or not cls.instance:
             cls.instance = super().__new__(cls)
 
             cls.instance_args = args
-            cls.instance_kwarg = kwarg
+            cls.instance_kwargs = kwargs
               
-            cls.instance.dictionary = cls.get_dictionary(*args, **kwarg)
+            cls.instance.dictionary = cls.get_dictionary(*args, **kwargs)
             
         cls.instance.dictionary = DefaultDictionary(cls.instance.dictionary)
         
@@ -39,7 +39,7 @@ class BaseDictionary(ABC):
 # --
     
     @classmethod
-    def get_dictionary(cls, *args, **kwarg) -> dict:
+    def get_dictionary(cls, *args, **kwargs) -> dict:
         return {}
     
 # --

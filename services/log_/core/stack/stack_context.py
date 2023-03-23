@@ -71,4 +71,4 @@ class StackContext(BaseLog):
             return Stack
 
         except Exception as exp:
-            print(f"{__file__}-{__name__} : + {str(exp)}")
+            print(f"{__file__}--->{__name__} : + {str(exp)}")

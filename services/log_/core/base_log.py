@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 # --
     
 class BaseLog(ABC):
-    def __init__(self, **kwarg: Any) -> None:
+    def __init__(self, **kwargs: Any) -> None:
         pass
     
 # --
@@ -14,16 +14,16 @@ class BaseLog(ABC):
 # --
    
     instance: Any = None
-    def __new__(cls, **kwarg: Any):
+    def __new__(cls, **kwargs: Any):
         
         if hasattr(cls, 'instance_args'):
-            if cls.instance_args != kwarg:
+            if cls.instance_args != kwargs:
                 cls.instance = None
                 
         if not hasattr(cls, 'instance') or not cls.instance:
             cls.instance = super().__new__(cls)
             
-            cls.instance_args = kwarg
+            cls.instance_args = kwargs
             
             cls.instance.template_dictionary = cls.get_template_dictionary()
             cls.instance.config_dictionary = cls.get_config_dictionary()

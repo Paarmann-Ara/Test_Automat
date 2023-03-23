@@ -7,7 +7,7 @@ from abc import ABC, abstractmethod
 # --
     
 class BaseMailTemplate(ABC):
-    def __init__(self, **kwarg: Any) -> None:
+    def __init__(self, **kwargs: Any) -> None:
         pass
     
 # --
@@ -15,18 +15,18 @@ class BaseMailTemplate(ABC):
 # --
    
     instance: Any = None
-    def __new__(cls, **kwarg: Any):
+    def __new__(cls, **kwargs: Any):
         
         if hasattr(cls, 'instance_args'):
-            if cls.instance_args != kwarg:
+            if cls.instance_args != kwargs:
                 cls.instance = None
                 
         if not hasattr(cls, 'instance') or not cls.instance:
             cls.instance = super().__new__(cls)
             
-            cls.instance_args = kwarg
+            cls.instance_args = kwargs
             
-            body = cls.clear_body(**kwarg)
+            body = cls.clear_body(**kwargs)
             cls.instance.template_object = {'template': cls.get_template(), 'mixed_html': cls.get_mixed_html_body(body), 'body' : body}
                    
         return cls.instance
@@ -52,8 +52,8 @@ class BaseMailTemplate(ABC):
 # --
 
     @classmethod
-    def clear_body(cls, **kwarg) -> str:
-        body = kwarg['body']
+    def clear_body(cls, **kwargs) -> str:
+        body = kwargs['body']
         body = body.replace("\n", "<br>\n")
         body = body.replace(" ", "&nbsp;")
         return body

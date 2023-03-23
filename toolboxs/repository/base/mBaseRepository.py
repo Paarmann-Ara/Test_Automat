@@ -23,9 +23,9 @@ class BaseDictionary(ABC):
 # --
    
     instance = None
-    def __new__(cls, **kwarg: Any):
+    def __new__(cls, **kwargs: Any):
         if not hasattr(cls, 'instance') or not cls.instance:
-            cls.instance = super().__new__(cls, **kwarg)
+            cls.instance = super().__new__(cls, **kwargs)
             
             cls.instance.dictionary = cls.get_dictionary()
             
