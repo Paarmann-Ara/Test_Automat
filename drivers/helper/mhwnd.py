@@ -6,7 +6,7 @@ class chwnd():
 #...
 #--
         @staticmethod
-        def get_hwndsbyProcessid (pid, IsHex = True):
+        def get_hwndsbyProcessid (pid, IsHe5x = True):
                 
                 def callback (hwnd, hwnds):
                         if win32gui.IsWindowVisible(hwnd) and win32gui.IsWindowEnabled(hwnd):
@@ -23,9 +23,4 @@ class chwnd():
                         return_hwnds.append(hex(hwnd) if IsHex else hwnd)
                   
                 return return_hwnds
-#--
-#...
-#--
-
-if __name__ == '__main__':
-        pass
+        
