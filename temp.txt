@@ -1,1 +1,1 @@
-03-22-2023, 21:21:15  SELECT * FROM dbo.tRMGrund
+08-17-2023, 11:51:25 c:\OneDrive\Test_Automat\services\ftp\core\ftp.py--->services.ftp.core.ftp: 'current_working_directory'

@@ -3,6 +3,7 @@ from services.disk.xml.xml_manager import XMLManager
 from services.log_.log_provider import LogProvider
 from services.log_.stack_context_provider import StackContextProvider
 from services.mail.mail_provider import MailProvider
+from services.disk.disk_provider import DiskProvider
 from wawi.testcase.testcase_sample_provider import TestcaseSampelProvider
 from wawi.testcase.testcase_object_provider import TestcaseObjectProvider
 from services.db.sqlserver.sqlserver_provider import SqlserverProvider
@@ -17,9 +18,9 @@ class ServiceProvider:
         self.json = JSONManager().instance
         self.xml = XMLManager().instance
         self.stack = StackContextProvider().stack
-
-        self.info = LogProvider(template='Pipeline',config='Pipeline').info_instance
-        self.error = LogProvider(template='error',config='error').error_instance        
+        
+        self.info = LogProvider(template='Pipeline',config='Pipeline').info
+        self.error = LogProvider(template='error',config='error').error
         self.tc_mo = MailProvider(body='Test_body', subject='Test_Subjekt').tc_mo_instance
         
         self.db_connection = SqlserverProvider().db_connection

@@ -41,18 +41,6 @@ xml_dicttionary = xml.operation(CONSTS.ROOT_DIR + r'\xml_test_0.xml', xml_dictti
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 {
     "wawi.testcase.testcase_object.testcase_objects_dictionary":{
         "testcase_object_directory": "/wawi/testcase/testcase_object"
