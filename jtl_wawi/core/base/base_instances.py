@@ -1,13 +1,13 @@
 
-from wawi.core.engin.TestComplete.mTestCompleteDriver import cTestCompleteDriver
-from wawi.core.Measures.mPerformanceProtokoliren import cPerformanceProtokoliren
-from wawi.core.CheckPoint.mCheckPoint import cCheckPoint
-from wawi.Setting.core.mcoreConfig import ccoreConfig
-from wawi.core.base.mbaseDescriptor import cDescriptor
+from jtl_wawi.core.engin.TestComplete.mTestCompleteDriver import cTestCompleteDriver
+from jtl_wawi.core.Measures.mPerformanceProtokoliren import cPerformanceProtokoliren
+from jtl_wawi.core.CheckPoint.mCheckPoint import cCheckPoint
+from jtl_wawi.Setting.core.mcoreConfig import ccoreConfig
+from jtl_wawi.core.base.mbaseDescriptor import cDescriptor
 
 '''TestCase Modules'''
-from wawi.TestCase.Keys.Common.Application.mMessageManager import cMessageManager
-from wawi.TestCase.Keys.Common.Application.mToolbar import cToolbar
+from jtl_wawi.TestCase.Keys.Common.Application.mMessageManager import cMessageManager
+from jtl_wawi.TestCase.Keys.Common.Application.mToolbar import cToolbar
 
 '''Projects Modules'''
 from Toolboxs.mToolbox import cToolbox
@@ -20,14 +20,14 @@ from Email.mSendMail import cSendMail
 from Log.mLog import cLog
 
 '''Config Modules'''
-from wawi.Setting.wawi.mwawiConfig import cAQCConfig
+from jtl_wawi.Setting.wawi.mwawiConfig import cAQCConfig
 from Toolboxs.Repository.mText import cText
 from Toolboxs.Repository.mTime import cTime
-from wawi.Setting.TestCase.mTestCaseConfig import cTestCaseConfig
-from wawi.Setting.TestCase.mTestCaseDateiConfig import cTestCaseDateiConfig
-from wawi.Setting.core.mCheckPointConfig import cCheckPointConfig
+from jtl_wawi.Setting.TestCase.mTestCaseConfig import cTestCaseConfig
+from jtl_wawi.Setting.TestCase.mTestCaseDateiConfig import cTestCaseDateiConfig
+from jtl_wawi.Setting.core.mCheckPointConfig import cCheckPointConfig
 from Drivers.Setting.menginConfig import cenginConfig
-from wawi.Setting.core.mcoreConfig import ccoreConfig
+from jtl_wawi.Setting.core.mcoreConfig import ccoreConfig
 
 
 # --

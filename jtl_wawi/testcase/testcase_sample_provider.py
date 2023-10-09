@@ -1,4 +1,4 @@
-from wawi.testcase.sample_dictionary.testcase_sample_dictionary import TestcaseSampleDictionary
+from jtl_wawi.testcase.sample_dictionary.testcase_sample_dictionary import TestcaseSampleDictionary
 
 #--
 #...

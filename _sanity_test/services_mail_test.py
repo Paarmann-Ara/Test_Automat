@@ -1,6 +1,6 @@
 from services.mail.templates.testcomplete_result import TestCompleteResultTemplate
 from services.mail.mail_provider import MailProvider
-from wawi.testcase.testcase_sample_provider import TestcaseSampelProvider
+from jtl_wawi.testcase.testcase_sample_provider import TestcaseSampelProvider
 
 tc_mo = MailProvider().tc_mo_instance
 tc_mo.send_mail()

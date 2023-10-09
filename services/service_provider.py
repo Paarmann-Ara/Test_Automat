@@ -4,8 +4,8 @@ from services.log_.log_provider import LogProvider
 from services.log_.stack_context_provider import StackContextProvider
 from services.mail.mail_provider import MailProvider
 from services.disk.disk_provider import DiskProvider
-from wawi.testcase.testcase_sample_provider import TestcaseSampelProvider
-from wawi.testcase.testcase_object_provider import TestcaseObjectProvider
+from jtl_wawi.testcase.testcase_sample_provider import TestcaseSampelProvider
+from jtl_wawi.testcase.testcase_object_provider import TestcaseObjectProvider
 from services.db.sqlserver.sqlserver_provider import SqlserverProvider
 
 #--

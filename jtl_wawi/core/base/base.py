@@ -3,8 +3,8 @@ import codecs
 import inspect
 import os
 import datetime
-from wawi.core.base.bluepages.bp_base import BluepageBase
-from wawi.core.base.base_instances import BaseInstances
+from jtl_wawi.core.base.bluepages.bp_base import BluepageBase
+from jtl_wawi.core.base.base_instances import BaseInstances
 
 # --
 # ...

@@ -1,6 +1,6 @@
 from services.log_.log_provider import LogProvider
 from services.log_.stack_context_provider import StackContextProvider
-from wawi.testcase.testcase_object_provider import TestcaseObjectProvider
+from jtl_wawi.testcase.testcase_object_provider import TestcaseObjectProvider
 from drivers.testcomplete.core.testcomplete_driver import TestCompleteDriver
 from drivers.testcomplete.config.testcomplete_config import TestcompleteConfig
 

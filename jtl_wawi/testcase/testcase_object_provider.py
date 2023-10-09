@@ -1,5 +1,5 @@
-from wawi.testcase.testcase_object.testcase_objects_dictionary import TestcaseObjectDictionary
-from wawi.testcase.testcase_object.class_of_dictionary import ClassOfDictionary
+from jtl_wawi.testcase.testcase_object.testcase_objects_dictionary import TestcaseObjectDictionary
+from jtl_wawi.testcase.testcase_object.class_of_dictionary import ClassOfDictionary
 
 #--
 #...

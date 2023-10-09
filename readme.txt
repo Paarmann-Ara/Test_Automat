@@ -70,3 +70,9 @@ install Package
         six==1.16.0
 
 pip3 install -r requirements.txt
+
+My Usefull Shortkeys
+	comment ctrl+k ctrl+c
+	uncomment ctrl+k ctrl+u
+
+	""" shift+alt+a
