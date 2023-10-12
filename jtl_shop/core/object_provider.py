@@ -1,15 +1,13 @@
 from typing import Any
-from jtl_shop.core.base import Base
 from jtl_shop.core.jtlshop_config import JtlShopConfig
  
 #--
 #...
 #-- 
 
-class ObjectProvider(Base):
+class ObjectProvider():
     def __init__(self, *args: Any) -> None:
         pass
-        
     
 #--
 #...

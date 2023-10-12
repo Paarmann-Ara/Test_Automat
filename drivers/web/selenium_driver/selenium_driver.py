@@ -1,8 +1,8 @@
-from drivers.core.base_driver import BaseDriver
 from drivers.web.selenium_driver.core.selenium_core import SeleniumCore
 from drivers.web.selenium_driver.config.selenium_config import SeleniumConfig
 from selenium.webdriver.common.keys import Keys
 from typing import Any
+from drivers.core.base_driver import BaseDriver
 
 #--
 #...
@@ -10,13 +10,13 @@ from typing import Any
 
 class SeleniumDriver(BaseDriver):
     def __init__(self) -> None:
-        self.selenium_driver = SeleniumCore().instance
+        self.driver = SeleniumCore().instance
         
+        print(f"{__class__.__name__}:{id(self.instance)}")
         
 #--
 #...
 #--
-
     @classmethod
     def get_config_dictionary(cls):
         return SeleniumConfig().instance.dictionary
@@ -30,8 +30,8 @@ class SeleniumDriver(BaseDriver):
     def wait_for_availablity(function):
         
         def inner_function(*args, **kwargs):
-            args[0].selenium_driver.set_object(args[1])
-            args[0].current_object = args[0].selenium_driver.instance.current_object
+            args[0].driver.set_object(args[1])
+            args[0].driver.current_object = args[0].driver.current_object
             return function(*args, **kwargs)
         
         return inner_function
@@ -41,13 +41,13 @@ class SeleniumDriver(BaseDriver):
 #--
     
     def open(self, url):
-        self.selenium_driver.get(url)
+        self.driver.get(url)
 #--
 #...
 #--
     
     def close(self):
-        self.selenium_driver.quit()
+        self.driver.quit()
         
 #--
 #...
@@ -59,18 +59,18 @@ class SeleniumDriver(BaseDriver):
         try:
                        
             if IsClear:
-                self.current_object.clear()
+                self.driver.current_object.clear()
                 self.delay(1)
                 
             if IsUseKey:
                 for chr in text:
-                    self.selenium_driver.send_keys(chr)
+                    self.driver.send_keys(chr)
                     
             else:
-                self.selenium_driver.send_keys(text)
+                self.driver.send_keys(text)
             
             if IsEnter:
-                self.selenium_driver.send_keys(Keys.ENTER)
+                self.driver.send_keys(Keys.ENTER)
                 self.delay(1)
                 
             self.delay(1)
@@ -85,4 +85,4 @@ class SeleniumDriver(BaseDriver):
 
     @wait_for_availablity
     def find_elemnts(self, object:dict):
-        self.selenium_driver.find_elemnts(object)
+        self.driver.find_elemnts(object)

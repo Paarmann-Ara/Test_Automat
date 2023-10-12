@@ -1,5 +1,4 @@
-from selenium import webdriver
-from drivers.core.base_driver import BaseDriver
+from drivers.web.selenium_driver.core.base_selenium import BaseSelenium
 from drivers.web.selenium_driver.config.selenium_config import SeleniumConfig
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions
@@ -10,11 +9,11 @@ from typing import Any
 #--
 #...
 #--
-
-class SeleniumCore(BaseDriver):
+class SeleniumCore(BaseSelenium):
     def __init__(self) -> None:
-        self.driver = webdriver.Chrome(self.config_dictionary['chrom_webdriver_path'])
         self.current_object = None
+        
+        print(f"{__class__.__name__}:{id(self.instance)}")
            
 #--
 #...
