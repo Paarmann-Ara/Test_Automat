@@ -1,5 +1,6 @@
 from typing import Any
 from abc import ABC, abstractmethod
+import time
 
 # --
 # ...
@@ -16,16 +17,14 @@ class BaseDriver(ABC):
     instance: Any = None
     def __new__(cls, **kwargs: Any):
         
-        if hasattr(cls, 'instance_args'):
-            if cls.instance_args != kwargs:
-                cls.instance = None
-                
-        if not hasattr(cls, 'instance') or not cls.instance:
+        if cls.instance:
+            return cls.instance
+
+        else:                
             cls.instance = super().__new__(cls)
             
-            cls.instance_args = kwargs
-            
             cls.instance.config_dictionary = cls.get_config_dictionary()
+            cls.instance.delay = cls.delay
                                
         return cls.instance
     
@@ -36,6 +35,14 @@ class BaseDriver(ABC):
     @classmethod
     def get_config_dictionary(cls) -> str:
             return ''
+        
+# --
+# ...
+# --
+    
+    @classmethod
+    def delay(cls, delay = 1) -> str:
+        time.sleep(delay)
     
 # --
 # ...

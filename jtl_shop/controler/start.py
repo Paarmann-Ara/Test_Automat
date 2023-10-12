@@ -1,4 +1,6 @@
-from jtl_shop.testcase.classes.pages.mainpage.mainpage import MainPage
+from jtl_shop.testcase.classes.pages.page_home import PageHome
+from jtl_shop.testcase.classes.pages.page_search import PageSearch
 
 
-MainPage().sample()
+PageHome().sample()
+PageSearch().sample()

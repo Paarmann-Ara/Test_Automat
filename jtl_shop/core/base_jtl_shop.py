@@ -1,12 +1,12 @@
+from jtl_shop.core.base import Base
 from typing import Any
-from abc import ABC, abstractmethod
 from drivers.web.web_driver_provider import WebDriverProvider
 
 # --
 # ...
 # --
     
-class BaseJtlShop(ABC):
+class BaseJtlShop(Base):
     def __init__(self, *args, **kwargs: Any) -> None:
         pass
     
@@ -17,11 +17,10 @@ class BaseJtlShop(ABC):
     instance: Any = None
     def __new__(cls, **kwargs: Any):
         
-        if hasattr(cls, 'instance_args'):
-            if cls.instance_args != kwargs:
-                cls.instance = None
+        if cls.instance:
+                return cls.instance
                 
-        if not hasattr(cls, 'instance') or not cls.instance:
+        else:
             cls.instance = super().__new__(cls)
             
             cls.instance_args = kwargs
@@ -33,7 +32,7 @@ class BaseJtlShop(ABC):
             for item in dir(tempdriver):
                 if (item[0:1]!='_') and (item[0:2]!='__'):
                     setattr(cls.instance, item, getattr(tempdriver, item))
-            
+        print(f"{__class__.__name__}: cls.Instance.id= {id(cls.instance)}")
         return cls.instance
     
 # --
@@ -43,8 +42,7 @@ class BaseJtlShop(ABC):
     @classmethod
     def get_config_dictionary(cls) -> str:
         return ''
-
-    
+        
 # --
 # ...
 # --

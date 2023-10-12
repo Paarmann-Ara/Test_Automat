@@ -1,12 +1,12 @@
 from typing import Any
-from jtl_shop.core.base_jtl_shop import BaseJtlShop
+from jtl_shop.core.base import Base
 from jtl_shop.core.jtlshop_config import JtlShopConfig
  
 #--
 #...
 #-- 
 
-class ObjectProvider(BaseJtlShop):
+class ObjectProvider(Base):
     def __init__(self, *args: Any) -> None:
         pass
         
