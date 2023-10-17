@@ -23,22 +23,19 @@ class SeleniumDriver(BaseDriver):
 #...
 #--
 
-    # def set_driver(self, driver):
-    #     self.driver = driver
-        
-#--
-#...
-#--
-
     # decorator
     # run set_object befor all methode
     def wait_for_availablity(function):
         
         def inner_function(*args, **kwargs):
-            args[0].driver.set_object(args[1])
-            args[0].driver.current_object = args[0].driver.current_object
-            return function(*args, **kwargs)
-        
+            
+            try:
+                args[0].driver.set_object(args[1])
+                args[0].driver.current_object = args[0].driver.current_object
+                return function(*args, **kwargs)
+            except Exception as exp:
+                print(exp)
+                
         return inner_function
         
 #--
@@ -53,6 +50,21 @@ class SeleniumDriver(BaseDriver):
     
     def close(self):
         self.driver.quit()
+        
+    
+#--
+#...
+#--
+
+    def forward_page(self)->None:
+        self.driver.forward()
+    
+#--
+#...
+#--
+
+    def backward_page(self)->None:
+        self.driver.backward()
         
 #--
 #...

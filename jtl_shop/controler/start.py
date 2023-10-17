@@ -19,6 +19,3 @@ import unittest
    
 module = "jtl_shop.testcase.szenarien.home_page_search_item"
 unittest.main(module)
-
-
-

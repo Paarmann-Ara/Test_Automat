@@ -31,3 +31,23 @@ class JtlShopExplprerManager(BaseJtlShop):
     def close_browser(self)->None:
         self.close()
         return True
+    
+#--
+#...
+#--
+
+    def forward_browser(self)->None:
+        g=self
+        self.forward_page()
+        self.delay(3)
+        return True
+    
+#--
+#...
+#--
+
+    def backward_browser(self)->None:
+        g=self
+        self.instance.backward_page()
+        self.delay(3)
+        return True

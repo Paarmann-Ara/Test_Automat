@@ -15,6 +15,5 @@ class ObjectProvider():
 
     def __call__(self, *args: Any) -> Any:
         for key,value in JtlShopConfig(*args).instance.dictionary.items():
-            setattr(self, key, value)
-        
+            setattr(self, key, *value.items())
         return self

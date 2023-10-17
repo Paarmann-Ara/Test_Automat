@@ -26,22 +26,28 @@ class HomePageSearchItem(unittest.TestCase):
     def test_000_run_explorer(self):
         assert JtlShopExplprerManager(site_adress=self.site_adress).run_browser()
 
-    def test_010_textbox_search_item(self):
+    def test_100_textbox_search_item(self):
         assert PageHome().textbox_search_item(text=self.such_item)
 
-    def test_020_text_suche_nach_in_result_page(self):
+    def test_200_text_suche_nach_in_result_page(self):
         assert PageResultSearch().label_suche_nach_text().index(self.such_item) > 0
 
-    def test_030_item_nach_suchen_in_result_page(self):
+    def test_300_item_nach_suchen_in_result_page(self):
         assert len(PageResultSearch().items_nach_suchen()) > 0
 
-    def test_030_item_nach_suchen_in_result_page(self):
+    def test_400_item_nach_suchen_in_result_page(self):
         assert PageResultSearch().present_page_of_first_item_nach_suchen()
         
-    def test_030_item_nach_suchen_in_result_page(self):
+    def test_500_close_browser(self):
+        assert JtlShopExplprerManager().backward_browser()
+        
+    def test_600_item_nach_suchen_in_result_page(self):
         assert PageResultSearch().present_page_item_nach_suchen(self.item_to_present_page)
         
-    def test_040_close_browser(self):
+    def test_700_close_browser(self):
+        assert JtlShopExplprerManager().backward_browser()
+        
+    def test_800_close_browser(self):
         assert JtlShopExplprerManager().close_browser()
 
     def tearDown(self) -> None:

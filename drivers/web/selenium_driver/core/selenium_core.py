@@ -34,7 +34,26 @@ class SeleniumCore(BaseSelenium):
     def get(self, url="http://www.google.com"):
         self.driver.get(url)
         return True
+    
+    
+#--
+#...
+#--
 
+    def forward(self)->None:
+        self.driver.forward()
+        self.delay(3)
+        return True
+    
+#--
+#...
+#--
+
+    def backward(self)->None:
+        self.driver.back()
+        self.delay(3)
+        return True
+    
 #--
 #...
 #--
@@ -44,7 +63,7 @@ class SeleniumCore(BaseSelenium):
         try:
             
             self.current_object = WebDriverWait(self.driver, wait_for_secound).until(
-                expected_conditions.presence_of_element_located(object.popitem())
+                expected_conditions.presence_of_element_located(object)
             )
             
         finally:
@@ -67,7 +86,7 @@ class SeleniumCore(BaseSelenium):
 #--
         
     def find_elements(self, object):
-        Key, Value = object.popitem()
+        Key, Value = object
         return self.driver.find_elements(Key, Value)
             
 #--
@@ -75,7 +94,7 @@ class SeleniumCore(BaseSelenium):
 #--
         
     def find_element(self, object):
-        Key, Value = object.popitem()
+        Key, Value = object
         return self.driver.find_element(Key, Value)
                 
 #--
