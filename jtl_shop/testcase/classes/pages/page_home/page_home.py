@@ -9,8 +9,6 @@ class PageHome(BaseJtlShop):
     def __init__(self) -> None:
         self.objects = self.get_objects()
         
-        print(f"{__class__.__name__}:{id(self.instance)}")
-    
 # --
 # ...
 # --
@@ -22,6 +20,6 @@ class PageHome(BaseJtlShop):
 #...
 #--
 
-    def sample(self)->None:
-        self.open("https://2-jtl-shop-p-a-7acf6a8f.docker.jtl-software.de/")
-        self.set_text(self.objects.txbSearch, "Gürtel", IsUseKey = True, IsEnter = True)        
+    def textbox_search_item(self, text:str = "Gürtel")->None:
+        return self.set_text(self.objects.txbSearch, text, IsUseKey = True, IsEnter = True)
+        

@@ -1,6 +1,7 @@
 from drivers.core.base_driver import BaseDriver
 from selenium import webdriver
 from typing import Any
+from selenium.webdriver.chrome.service import Service
 
 #--
 #...
@@ -13,7 +14,8 @@ class BaseSelenium(BaseDriver):
             
             cls.instance.config_dictionary = cls.get_config_dictionary()
             cls.instance.delay = cls.delay
-            cls.driver = webdriver.Chrome(cls.instance.config_dictionary['selenium_chrom_webdriver_path'])
+            
+            cls.driver = webdriver.Chrome(service=Service(cls.instance.config_dictionary['selenium_chrom_webdriver_path']))
                                           
         return cls.instance
 

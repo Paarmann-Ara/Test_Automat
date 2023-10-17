@@ -5,11 +5,10 @@ from jtl_shop.core.base_jtl_shop import BaseJtlShop
 #...
 #--
 
-class PageSearch(BaseJtlShop):
-    def __init__(self) -> None:
+class JtlShopExplprerManager(BaseJtlShop):
+    def __init__(self, site_adress=None) -> None:
         self.objects = self.get_objects()
-        
-        print(f"{__class__.__name__}:{id(self.instance)}")
+        self.site_adress = site_adress
     
 # --
 # ...
@@ -22,6 +21,13 @@ class PageSearch(BaseJtlShop):
 #...
 #--
 
-    def sample(self)->None:
-        print(self.find_elemnts(self.objects.suche_nach))
-        
+    def run_browser(self)->None:
+        self.open(self.site_adress)
+        return True
+#--
+#...
+#--
+
+    def close_browser(self)->None:
+        self.close()
+        return True

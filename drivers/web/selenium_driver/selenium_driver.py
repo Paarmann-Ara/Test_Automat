@@ -12,15 +12,20 @@ class SeleniumDriver(BaseDriver):
     def __init__(self) -> None:
         self.driver = SeleniumCore().instance
         
-        print(f"{__class__.__name__}:{id(self.instance)}")
-        
 #--
 #...
 #--
     @classmethod
     def get_config_dictionary(cls):
         return SeleniumConfig().instance.dictionary
-    
+
+#--
+#...
+#--
+
+    # def set_driver(self, driver):
+    #     self.driver = driver
+        
 #--
 #...
 #--
@@ -75,6 +80,8 @@ class SeleniumDriver(BaseDriver):
                 
             self.delay(1)
             
+            return True
+        
         except Exception as exp:
             print(exp)
             return False
@@ -83,6 +90,13 @@ class SeleniumDriver(BaseDriver):
 #...
 #--
 
-    @wait_for_availablity
-    def find_elemnts(self, object:dict):
-        self.driver.find_elemnts(object)
+    def find_element(self, object:dict):
+        return self.driver.find_element(object)
+
+        
+#--
+#...
+#--
+
+    def find_elements(self, object:dict):
+            return self.driver.find_elements(object)
