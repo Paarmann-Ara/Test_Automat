@@ -104,11 +104,24 @@ class SeleniumDriver(BaseDriver):
 
     def find_element(self, object:dict):
         return self.driver.find_element(object)
-
         
 #--
 #...
 #--
 
     def find_elements(self, object:dict):
-            return self.driver.find_elements(object)
+        return self.driver.find_elements(object)
+        
+#--
+#...
+#--
+
+    def delete_all_cookies(self):
+        return self.driver.delete_all_cookies()
+        
+#--
+#...
+#--
+     
+    def get_all_cookies(self):
+        return self.driver.get_all_cookies()

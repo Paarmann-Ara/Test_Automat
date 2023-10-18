@@ -111,4 +111,28 @@ class SeleniumCore(BaseSelenium):
 #--
 
     def send_keys(self, text=""):
-        return self.current_object.send_keys(text)
+        self.current_object.send_keys(text)
+        return True
+
+#--
+#...
+#--
+
+    def delete_all_cookies(self):
+        
+        try:
+
+            self.driver.delete_all_cookies()
+            self.delay(3)
+            return True
+        
+        except Exception as exp:
+            print(exp)
+            
+#--
+#...
+#--
+
+    def get_all_cookies(self):
+        list_alle_cookies = self.driver.get_cookies()
+        return list_alle_cookies
