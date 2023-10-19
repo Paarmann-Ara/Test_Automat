@@ -35,7 +35,7 @@ class Cookies(BaseJtlShop):
 #...
 #--
 
-    def get_all_cookies(self):
+    def get_alle_cookies(self):
         all_cookies = self.get_all_cookies()
         print(all_cookies)
         return all_cookies

@@ -54,20 +54,30 @@ Conventions.
 pip3 freeze > requirements.txt
 
 Create repository
-        python3 -m venv C:\OneDrive\TestCaseExec\.venv
-        Create pth file in C:\OneDrive\TestCaseExec\.venv\Lib\site-packages\WAWi.pth contain(c:\\OneDrive\\TestCaseExec)
-        cd C:\OneDrive\TestCaseExec\.venv\Scripts -> activate.bat
+        python3 -m venv C:\OneDrive\Test_Automat\.venv
+        Create pth file in C:\OneDrive\Test_Automat\.venv\Lib\site-packages\WAWi.pth contain(c:\OneDrive\Test_Automat)
+        cd C:\OneDrive\Test_Automat\.venv\Scripts
+		run activate.bat
+		pip3 install --upgrade pip
 
 install Package
-        selenium==3.141.0
-        Appium-Python-Client==1.0.2
-        win32gui
-        comtypes==1.1.14
-        pyodbc==4.0.35
-        pywin32==305
-        pywinauto==0.6.8
-        PyYAML==6.0
-        six==1.16.0
+	Appium-Python-Client==1.0.2
+	comtypes==1.1.14
+	dict2xml==1.7.3
+	pyodbc==4.0.35
+	PyQt5==5.15.9
+	PyQt5-Qt5==5.15.2
+	PyQt5-sip==12.11.1
+	pywin32==306
+	pywinauto==0.6.8
+	PyYAML==6.0
+	selenium==4.14.0
+	six==1.16.0
+	urllib3==1.26.15
+	xmltodict
+	pytest==7.4.2
+	pytest-html==4.0.2
+	pytest-xdist==3.3.1
 
 pip3 install -r requirements.txt
 

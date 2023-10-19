@@ -1,5 +1,5 @@
 import unittest
-from jtl_shop.testcase.classes.common.coockies import Coockies
+from jtl_shop.testcase.classes.common.cookies import Cookies
 from jtl_shop.testcase.classes.pages.page_home.page_home import PageHome
 from jtl_shop.testcase.classes.pages.page_search.page_result_search import PageResultSearch
 from jtl_shop.testcase.classes.common.jtl_shop_explprer_manager import JtlShopExplprerManager
@@ -28,7 +28,7 @@ class HomePageSearchItem(unittest.TestCase):
         assert JtlShopExplprerManager(site_adress=self.site_adress).run_browser()
         
     def test_010_(self):
-        assert Coockies().akzeptiren_cookies()
+        assert Cookies().akzeptiren_cookies()
 
     def test_100_textbox_search_item(self):
         assert PageHome().textbox_search_item(text=self.such_item)
@@ -36,10 +36,10 @@ class HomePageSearchItem(unittest.TestCase):
     def test_200_text_suche_nach_in_result_page(self):
         assert PageResultSearch().label_suche_nach_text().index(self.such_item) > 0
 
-    def test_300_item_nach_suchen_in_result_page(self):
-        assert len(PageResultSearch().items_nach_suchen()) > 0
+    def test_300_list_items_nach_suchen_in_result_page(self):
+        assert len(PageResultSearch().list_items_nach_suchen()) > 0
 
-    def test_400_item_nach_suchen_in_result_page(self):
+    def test_400_first_item_nach_suchen_in_result_page_besuchen(self):
         assert PageResultSearch().present_page_of_first_item_nach_suchen()
         
     def test_500_backward_browser(self):

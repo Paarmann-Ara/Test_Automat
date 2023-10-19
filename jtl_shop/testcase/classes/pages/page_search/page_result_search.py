@@ -28,7 +28,7 @@ class PageResultSearch(BaseJtlShop):
 #...
 #--
 
-    def items_nach_suchen(self)->None:
+    def list_items_nach_suchen(self)->None:
         product_list = []
         temp_selenium_driver_products = self.find_element(self.objects.product_list)
         temp_selenium_driver_product_list = temp_selenium_driver_products.find_elements(*self.objects.product_item_in_product_list)

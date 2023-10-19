@@ -1,127 +1,132 @@
-from drivers.web.selenium_driver.core.selenium_core import SeleniumCore
+from drivers.web.selenium_driver.core.base_selenium import BaseSelenium
 from drivers.web.selenium_driver.config.selenium_config import SeleniumConfig
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 from typing import Any
-from drivers.core.base_driver import BaseDriver
 
 #--
 #...
 #--
 
-class SeleniumDriver(BaseDriver):
+class SeleniumDriver(BaseSelenium):
     def __init__(self) -> None:
-        self.driver = SeleniumCore().instance
-        
+        self.current_object = None
+           
 #--
 #...
 #--
+
     @classmethod
     def get_config_dictionary(cls):
         return SeleniumConfig().instance.dictionary
-
+   
 #--
 #...
 #--
 
-    # decorator
-    # run set_object befor all methode
-    def wait_for_availablity(function):
-        
-        def inner_function(*args, **kwargs):
-            
-            try:
-                args[0].driver.set_object(args[1])
-                args[0].driver.current_object = args[0].driver.current_object
-                return function(*args, **kwargs)
-            except Exception as exp:
-                print(exp)
-                
-        return inner_function
+    def quit(self):
+        return self.driver.quit()
         
 #--
 #...
 #--
-    
-    def open(self, url):
+
+    def get(self, url="http://www.google.com"):
         self.driver.get(url)
-#--
-#...
-#--
+        return True
     
-    def close(self):
-        self.driver.quit()
-        
     
 #--
 #...
 #--
 
-    def forward_page(self)->None:
+    def forward(self)->None:
         self.driver.forward()
+        return True
     
 #--
 #...
 #--
 
-    def backward_page(self)->None:
-        self.driver.backward()
-        
+    def backward(self)->None:
+        self.driver.back()
+        self.delay(3)
+        return True
+    
 #--
 #...
 #--
 
-    @wait_for_availablity
-    def set_text(self, object:dict, text:str, IsClear = True, IsEnter = False, IsUseKey = False, MCounter = 3, IsAbsturz = True, delay = 50, IsRaiseException = True):
+    def set_object(self, object:dict,wait_for_secound=2):
         
         try:
-                       
-            if IsClear:
-                self.driver.current_object.clear()
-                self.delay(1)
-                
-            if IsUseKey:
-                for chr in text:
-                    self.driver.send_keys(chr)
-                    
-            else:
-                self.driver.send_keys(text)
             
-            if IsEnter:
-                self.driver.send_keys(Keys.ENTER)
-                self.delay(1)
-                
-            self.delay(1)
+            self.current_object = WebDriverWait(self.driver, wait_for_secound).until(
+                expected_conditions.presence_of_element_located(object)
+            )
             
-            return True
+        finally:
+            pass           
+
+#--
+#...
+#--
         
-        except Exception as exp:
-            print(exp)
-            return False
+    def find_elements(self, object):
+        Key, Value = object
+        return self.driver.find_elements(Key, Value)
+            
+#--
+#...
+#--
         
+    def find_element(self, object):
+        Key, Value = object
+        return self.driver.find_element(Key, Value)
+                            
 #--
 #...
 #--
 
-    def find_element(self, object:dict):
-        return self.driver.find_element(object)
-        
+    def send_keys(self, text=""):
+        self.driver.send_keys(text)
+        return True
+
 #--
 #...
 #--
 
-    def find_elements(self, object:dict):
-        return self.driver.find_elements(object)
-        
+    def click(self):
+        self.driver.click()
+        return True
+    
 #--
 #...
 #--
 
     def delete_all_cookies(self):
-        return self.driver.delete_all_cookies()
         
+        try:
+
+            self.driver.delete_all_cookies()
+            self.delay(3)
+            return True
+        
+        except Exception as exp:
+            print(exp)
+            
 #--
 #...
 #--
-     
+
     def get_all_cookies(self):
-        return self.driver.get_all_cookies()
+        list_alle_cookies = self.driver.get_cookies()
+        return list_alle_cookies
+    
+#--
+#...
+#--
+
+    def set_text(self, object:dict, text:str, IsClear = True, IsEnter = False, IsUseKey = False, MCounter = 3, IsAbsturz = True, delay = 50, IsRaiseException = True):
+        ...

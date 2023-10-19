@@ -18,5 +18,5 @@ import unittest
 #     print(item.text)
    
 module = "jtl_shop.testcase.szenarien.home_page_search_item"
-module = "jtl_shop.testcase.szenarien.artikel_in_wagenkorb_hinzufugen"
+#module = "jtl_shop.testcase.szenarien.artikel_in_wagenkorb_hinzufugen"
 unittest.main(module)
