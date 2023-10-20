@@ -19,11 +19,11 @@ class BaseJtlShop(ABC):
             cls.instance.config_dictionary = cls.get_config_dictionary()
             cls.instance.objects = cls.instance.get_objects()
             
-            tempdriver = WebDriverProvider().selenium_webdriver
+            temp_selenium_driver = WebDriverProvider().selenium_driver
             
-            for item in dir(tempdriver):
-                if (item[0:1]!='_') and (item[0:2]!='__'):
-                    setattr(cls.instance, item, getattr(tempdriver, item))
+            for methode in dir(temp_selenium_driver):
+                if (methode[0:1]!='_') and (methode[0:2]!='__'):
+                    setattr(cls.instance, methode, getattr(temp_selenium_driver, methode))
                     
         return cls.instance
     

@@ -61,7 +61,7 @@ Create repository
 		pip3 install --upgrade pip
 
 install Package
-	Appium-Python-Client==1.0.2
+	Appium-Python-Client==3.1.0
 	comtypes==1.1.14
 	dict2xml==1.7.3
 	pyodbc==4.0.35
@@ -70,7 +70,7 @@ install Package
 	PyQt5-sip==12.11.1
 	pywin32==306
 	pywinauto==0.6.8
-	PyYAML==6.0
+	PyYAML==6.0.1
 	selenium==4.14.0
 	six==1.16.0
 	urllib3==1.26.15
@@ -80,6 +80,7 @@ install Package
 	pytest-xdist==3.3.1
 
 pip3 install -r requirements.txt
+pip list
 
 My Usefull Shortkeys
 	comment ctrl+k ctrl+c

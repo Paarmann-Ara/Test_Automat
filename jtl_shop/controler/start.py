@@ -1,4 +1,3 @@
-import unittest
 
 # --
 # ...
@@ -16,7 +15,15 @@ import unittest
 
 # for item in elements:
 #     print(item.text)
-   
-module = "jtl_shop.testcase.szenarien.home_page_search_item"
-#module = "jtl_shop.testcase.szenarien.artikel_in_wagenkorb_hinzufugen"
-unittest.main(module)
+
+# module = "jtl_shop.testcase.szenarien.home_page_search_item"
+# module = "jtl_shop.testcase.szenarien.artikel_in_wagenkorb_hinzufugen"
+
+from jtl_shop.testcase.classes.common.explorer_manager_pytest import JtlShopPyTest_ExplorerManager
+
+# --
+# ...
+# --
+
+class Start:
+    ...

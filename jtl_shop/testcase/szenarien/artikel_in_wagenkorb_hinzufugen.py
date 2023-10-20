@@ -1,4 +1,3 @@
-import unittest
 from jtl_shop.testcase.classes.common.cookies import Cookies
 from jtl_shop.testcase.classes.pages.page_home.page_home import PageHome
 from jtl_shop.testcase.classes.pages.page_search.page_result_search import PageResultSearch
@@ -9,7 +8,7 @@ from jtl_shop.testcase.classes.common.jtl_shop_explprer_manager import JtlShopEx
 # --
 
 
-class ArtikelInWagenkorbHinzufugen(unittest.TestCase):
+class ArtikelInWagenkorbHinzufugen:
     def __init__(self, methodName: str = "runTest") -> None:
         super().__init__(methodName)
 
