@@ -17,7 +17,7 @@ class BaseJtlShop(ABC):
             cls.instance = super().__new__(cls)
             
             cls.instance.config_dictionary = cls.get_config_dictionary()
-            cls.instance.objects = cls.instance.get_objects()
+            cls.instance.elements = cls.instance.get_elements()
             
             temp_selenium_driver = WebDriverProvider().selenium_driver
             
@@ -47,5 +47,5 @@ class BaseJtlShop(ABC):
 # --
     
     @classmethod
-    def get_objects(cls) -> str:
+    def get_elements(cls) -> str:
         return None
