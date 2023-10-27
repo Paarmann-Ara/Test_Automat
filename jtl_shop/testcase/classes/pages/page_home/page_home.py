@@ -63,7 +63,7 @@ class PageHome(BaseJtlShop):
         self.click(self.elements.btn_user)
 
 
-ExplprerManager(
-    site_adress="https://2-jtl-shop-p-a-7acf6a8f.docker.jtl-software.de").run_browser()
-PageHome().to_login_form()
-FormLogin().logindata_eingeben()
+# ExplprerManager(
+#     site_adress="https://2-jtl-shop-p-a-7acf6a8f.docker.jtl-software.de").run_browser()
+# PageHome().to_login_form()
+# FormLogin().logindata_eingeben()

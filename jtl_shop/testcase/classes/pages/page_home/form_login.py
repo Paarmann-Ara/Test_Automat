@@ -28,6 +28,33 @@ class FormLogin(BaseJtlShop):
             self.set_text(self.elements.txb_password,
                           password, is_use_key=True)
             self.click(self.elements.btn_anmelden)
+            return True
+
+        except Exception as exp:
+            print(exp)
+
+# --
+# ...
+# --
+
+    def login_password_vergesen(self) -> bool:
+
+        try:
+
+            return self.click(self.elements.lnk_passwortvergessen)
+
+        except Exception as exp:
+            print(exp)
+
+# --
+# ...
+# --
+
+    def login_jetzt_registrieren(self) -> bool:
+
+        try:
+
+            return self.click(self.elements.lnk_jetztregistrieren)
 
         except Exception as exp:
             print(exp)
